@@ -12,7 +12,8 @@ node {
     stage('Build') {
         // Scripted pipeline
       def buildNumber = currentBuild.number
-      echo buildNumber
+
+      sh "echo 'Hello World. Var=$buildNumber'"
         // Run the maven build
         withEnv(["MVN_HOME=$mvnHome"]) {
             if (isUnix()) {
